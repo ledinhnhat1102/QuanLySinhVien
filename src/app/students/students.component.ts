@@ -20,13 +20,29 @@ export class StudentsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.serverHttp.getStudents().subscribe((data)=>{
-      console.log('getStudents',data);
-      this.students=data;
-    })
-  }
-  public addStudent() {
-    this.router.navigate(['student-form']);
+    this.loadData();
   }
 
+  private loadData() {
+    this.serverHttp.getStudents().subscribe((data) => {
+      console.log('getStudents', data);
+      this.students = data;
+      this.common.setTotalStudents(data.length);
+    });
+  }
+
+  public addStudent() {
+    this.router.navigate(['student-form', 0]);
+  }
+
+  public deleteStudent(studentId: number) {
+    this.serverHttp.deleteStudent(studentId).subscribe((data) => {
+      console.log('delete', data);
+      this.loadData();
+    });
+  }
+
+  public editStudent(studentId: number) {
+    this.router.navigate(['student-form', studentId]);
+  }
 }

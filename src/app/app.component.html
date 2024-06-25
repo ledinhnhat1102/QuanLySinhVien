@@ -1,3 +1,4 @@
+
 <mat-toolbar color="primary" class="nav-height">
   <mat-toolbar-row>
     <button mat-icon-button>
@@ -18,7 +19,7 @@
         [routerLink]="['/students']"
         [routerLinkActive]="'active-link'"
       >
-        <mat-icon>filter_none</mat-icon> Sinh viên
+        <mat-icon>filter_none</mat-icon> <span matBadge="{{totalStudents}}" matBadgeColor="warn">Sinh viên</span>
       </a>
       
       <a

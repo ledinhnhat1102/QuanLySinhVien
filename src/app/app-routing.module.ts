@@ -13,6 +13,7 @@ const routes: Routes = [
   {path:'dashboard', component: DashboardComponent},
   {path:'students', component: StudentsComponent},
   {path:'student-form', component: StudentFormComponent},
+  {path:'student-form/:id', component: StudentFormComponent},
   {path:'about', component: AboutComponent},
   {path:'form', component: FormComponent},
   {path:'**', component: PageNotFoundComponent},

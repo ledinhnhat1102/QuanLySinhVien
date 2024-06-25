@@ -20,14 +20,14 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.common.totalStudents$.subscribe((total) => {
-    //   this.totalStudents = total;
-    // });
-    // if (this.common.totalStudents === 0) {
-    //   this.serverHttp.getStudents().subscribe((data) => {
-    //     this.common.setTotalStudents(data.length);
-    //   });
-    // }
+    this.common.totalStudents$.subscribe((total) => {
+      this.totalStudents = total;
+    });
+    if (this.common.totalStudents === 0) {
+      this.serverHttp.getStudents().subscribe((data) => {
+        this.common.setTotalStudents(data.length);
+      });
+    }
   }
 
   public openLeftSide() {

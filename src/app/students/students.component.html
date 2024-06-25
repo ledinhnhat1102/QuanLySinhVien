@@ -12,6 +12,8 @@
             <th>Họ</th>
             <th>Điện thư</th>
             <th>Điện thoại</th>
+            <th>Ảnh</th>
+            <th>Hành động</th>
         </tr>
         <tr *ngFor="let student of students">
             <td>{{student?.id}}</td>
@@ -21,6 +23,26 @@
             <td>{{student?.lastName}}</td>
             <td>{{student?.email}}</td>
             <td>{{student?.phone}}</td>
+            <td align="center">
+                <img *ngIf="student?.picture" src="{{student?.picture}}" height="50">
+            </td>
+            <td>
+                <mat-icon
+                  style="cursor: pointer;"
+                  title="Nhấn vào để xóa"
+                  (click)="deleteStudent(student.id)"
+                >
+                  clear
+                </mat-icon>
+                &nbsp;
+                <mat-icon
+                  style="cursor: pointer;"
+                  title="Nhấn vào để sửa thông tin"
+                  (click)="editStudent(student.id)"
+                >
+                  create
+                </mat-icon>
+              </td>
         </tr>
     </table>
 </div>
