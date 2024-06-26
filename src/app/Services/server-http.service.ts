@@ -109,4 +109,18 @@ export class ServerHttpService {
     // return an observable with a user-facing error message
     return throwError('Something bad happened; please try again later.');
   }
+  public searchStudents(firstName: string, lastName: string): Observable<Student[]> {
+    const url = `${this.REST_API_SERVER}/SinhVienItems`;
+    return this.httpClient
+      .get<Student[]>(url, this.httpOptions)
+      .pipe(
+        map(students =>
+          students.filter(student =>
+            student.firstName.toLowerCase().includes(firstName.toLowerCase()) ||
+            student.lastName.toLowerCase().includes(lastName.toLowerCase())
+          )
+        ),
+        catchError(this.handleError)
+      );
+  }
 }

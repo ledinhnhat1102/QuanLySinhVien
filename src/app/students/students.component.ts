@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class StudentsComponent implements OnInit {
 
   public students: Student[] = [];
+  public searchFirstName: string = '';
+  public searchLastName: string = '';
 
   constructor(
     private common: CommonService,
@@ -50,5 +52,16 @@ export class StudentsComponent implements OnInit {
 
   public editStudent(studentId: number) {
     this.router.navigate(['student-form', studentId]);
+  }
+
+  public onSearch(query: string): void {
+    if (query) {
+      this.serverHttp.searchStudents(query, query)
+        .subscribe((data) => {
+          this.students = data;
+        });
+    } else {
+      this.loadData();
+    }
   }
 }

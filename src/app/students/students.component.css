@@ -34,3 +34,17 @@
   .add-button mat-icon {
     font-size: 24px;
   }
+  .search-form {
+    margin-top: 10px;
+    display: flex;
+    max-width: 350px;
+    align-items: center;
+  }
+  
+  .search-input {
+    flex: 1;
+  }
+  
+  .search-button {
+    margin-right: 8px;
+  }

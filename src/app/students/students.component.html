@@ -2,7 +2,17 @@
   <button mat-raised-button color="primary" (click)="addStudent()" class="add-button">
     <mat-icon>add_box</mat-icon>
     Thêm sinh viên
-  </button>  
+  </button>
+  <div class="search-form">
+    <mat-form-field appearance="outline" class="search-input">
+      <mat-label>Nhập tên hoặc họ để tìm kiếm</mat-label>
+      <input matInput #searchInput>
+      <button mat-icon-button matSuffix (click)="onSearch(searchInput.value)">
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
     <table id="customers" style="border-collapse: collapse;">
         <tr>
             <th>ID</th>
