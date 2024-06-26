@@ -33,12 +33,18 @@ export class StudentsComponent implements OnInit {
 
   public addStudent() {
     this.router.navigate(['student-form', 0]);
+    this.loadData();
   }
 
   public deleteStudent(studentId: number) {
-    this.serverHttp.deleteStudent(studentId).subscribe((data) => {
-      console.log('delete', data);
-      this.loadData();
+    this.serverHttp.deleteStudent(studentId).subscribe({
+      next: (data) => {
+        console.log('delete', data);
+        this.loadData();
+      },
+      error: (error) => {
+        console.error('Error deleting student:', error);
+      }
     });
   }
 

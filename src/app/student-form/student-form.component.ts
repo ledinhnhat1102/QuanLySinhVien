@@ -50,38 +50,41 @@ export class StudentFormComponent implements OnInit {
   }
 
   private createNewData(id: number): Student {
-    const newStudent: { [key: string]: any } = {}; //co the chua 1 chuoi or any
-    for (const controlName in this.studentForm.controls) {
-      if (controlName) {
-        newStudent[controlName] = this.studentForm.controls[controlName].value;
-      }
-    }
-    newStudent['id'] = id; // đặt ID cho sinh viên mới
-    return newStudent as Student;
-  }
+    const newStudent: Student = {
+        id,
+        code: this.studentForm.controls['code'].value,
+        gender: this.studentForm.controls['gender'].value,
+        firstName: this.studentForm.controls['firstName'].value,
+        lastName: this.studentForm.controls['lastName'].value,
+        dob: this.studentForm.controls['dob'].value,
+        email: this.studentForm.controls['email'].value,
+        phone: this.studentForm.controls['phone'].value,
+        picture: this.studentForm.controls['picture'].value
+    };
+    return newStudent;
+}
 
   public saveAndGotoList() {
     if (this.id > 0) {
-      this.serverHttp
-        .modifyStudent(this.id, this.createNewData(this.id))
-        .subscribe((data) => {
-          this.router.navigate(['students']);
-        });
+        this.serverHttp
+            .modifyStudent(this.id, this.createNewData(this.id))
+            .subscribe((data) => {
+                this.router.navigate(['students']);
+            });
     } else {
-      this.serverHttp.getStudents().subscribe((students) => {
-        const maxId = Math.max(...students.map((student: { id: any; }) => student.id));
-        const newId = maxId + 1;
-        this.serverHttp.addStudent(this.createNewData(newId)).subscribe((data) => {
-          this.router.navigate(['students']);
+        this.serverHttp.getStudents().subscribe((students) => {
+            const maxId = Math.max(...students.map((student: { id: any; }) => student.id));
+            const newId = maxId + 1;
+            this.serverHttp.addStudent(this.createNewData(newId)).subscribe((data) => {
+                this.router.navigate(['students']);
+            });
         });
-      });
     }
-  }
+}
 
   public save() {
     if (this.id > 0) {
       this.serverHttp.modifyStudent(this.id, this.createNewData(this.id)).subscribe((data) => {
-        // Xử lý khi lưu thành công
       });
     } else {
       this.serverHttp.getStudents().subscribe((students) => {

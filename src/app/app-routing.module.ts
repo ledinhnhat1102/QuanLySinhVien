@@ -7,6 +7,8 @@ import { FormComponent } from './form/form.component';
 import { StudentsComponent } from './students/students.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentFormComponent } from './student-form/student-form.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path:'student-form', component: StudentFormComponent},
   {path:'student-form/:id', component: StudentFormComponent},
   {path:'about', component: AboutComponent},
+  {path:'login', component: LoginComponent},
+  {path:'register', component: RegisterComponent},
   {path:'form', component: FormComponent},
   {path:'**', component: PageNotFoundComponent},
 ];

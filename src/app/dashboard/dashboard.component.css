@@ -1,0 +1,32 @@
+.dashboard-container {
+    padding: 20px;
+  }
+  
+  .stats-container {
+    margin-bottom: 20px;
+  }
+  
+  .stat-card {
+    text-align: center;
+  }
+  
+  .chart-container {
+    margin-bottom: 20px;
+  }
+  
+  .students-table-container {
+    margin-top: 20px;
+  }
+  
+  .mat-card {
+    margin: 10px;
+  }
+  
+  .mat-table {
+    width: 100%;
+  }
+  
+  .mat-header-cell, .mat-cell {
+    padding: 8px;
+  }
+  
