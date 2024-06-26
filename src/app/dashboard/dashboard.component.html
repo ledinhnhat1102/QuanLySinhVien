@@ -1,0 +1,45 @@
+<div class="dashboard-container">
+    <h1>Trang chủ</h1>
+  
+    <!-- Thống kê số liệu -->
+    <div class="stats-container">
+        <mat-card class="stat-card">
+            <mat-card-header>
+                <mat-card-title>Tổng số sinh viên</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{ totalStudents }}</h2>
+            </mat-card-content>
+        </mat-card>
+  
+        <mat-card class="stat-card">
+            <mat-card-header>
+                <mat-card-title>Số nam sinh viên</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{ totalMaleStudents }}</h2>
+            </mat-card-content>
+        </mat-card>
+  
+        <mat-card class="stat-card">
+            <mat-card-header>
+                <mat-card-title>Số nữ sinh viên</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <h2>{{ totalFemaleStudents }}</h2>
+            </mat-card-content>
+        </mat-card>
+    </div>
+  
+    <!-- Thông báo mới -->
+    <div class="notifications-container">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Thông báo mới</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Không có thông báo nào.</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

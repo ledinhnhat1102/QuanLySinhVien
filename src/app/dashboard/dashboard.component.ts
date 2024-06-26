@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ServerHttpService } from '../Services/server-http.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { HttpClient } from '@angular/common/http';
+import { Student } from 'models/Student';
 
-
-interface Student {
-  id: number;
-  name: string;
-  gender: string;
-  dob: Date;
-}
 
 @Component({
   selector: 'app-dashboard',
@@ -16,24 +10,29 @@ interface Student {
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  totalStudents = 0;
-  totalMaleStudents = 0;
-  totalFemaleStudents = 0;
+  totalStudents: number = 0;
+  totalMaleStudents: number = 0;
+  totalFemaleStudents: number = 0;
   dataSource = new MatTableDataSource<Student>([]);
   displayedColumns: string[] = ['id', 'name', 'gender', 'dob'];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private serverHttp: ServerHttpService) {}
 
   ngOnInit(): void {
     this.fetchStudentsData();
   }
 
   fetchStudentsData(): void {
-    this.httpClient.get<Student[]>('http://localhost:7075/api/SinhVienItems').subscribe(data => {
-      this.totalStudents = data.length;
-      this.totalMaleStudents = data.filter(student => student.gender === 'Nam').length;
-      this.totalFemaleStudents = data.filter(student => student.gender === 'Nữ').length;
-      this.dataSource.data = data;
-    });
+    this.serverHttp.getStudents().subscribe(
+      (students: Student[]) => {
+        this.dataSource.data = students;
+        this.totalStudents = students.length;
+        this.totalMaleStudents = students.filter(student => student.gender === 'Nam').length;
+        this.totalFemaleStudents = students.filter(student => student.gender === 'Nữ').length;
+      },
+      (error) => {
+        console.error('Lỗi khi lấy dữ liệu sinh viên:', error);
+      }
+    );
   }
 }

@@ -15,7 +15,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
-import { NgChartsModule } from 'ng2-charts';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
@@ -26,6 +25,7 @@ import { StudentFormComponent } from './student-form/student-form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
+import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 
 
@@ -44,7 +44,7 @@ import { MatSortModule } from '@angular/material/sort';
   imports: [
     BrowserModule,
     MatSortModule,
-    NgChartsModule,
+    MatTableModule,
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,

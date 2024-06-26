@@ -1,32 +1,17 @@
 .dashboard-container {
     padding: 20px;
-  }
-  
-  .stats-container {
-    margin-bottom: 20px;
-  }
-  
-  .stat-card {
+}
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-card {
+    width: 200px;
     text-align: center;
-  }
-  
-  .chart-container {
-    margin-bottom: 20px;
-  }
-  
-  .students-table-container {
+}
+
+.notifications-container {
     margin-top: 20px;
-  }
-  
-  .mat-card {
-    margin: 10px;
-  }
-  
-  .mat-table {
-    width: 100%;
-  }
-  
-  .mat-header-cell, .mat-cell {
-    padding: 8px;
-  }
-  
+}
