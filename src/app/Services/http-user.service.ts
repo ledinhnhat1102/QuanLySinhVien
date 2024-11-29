@@ -8,8 +8,8 @@ import { User } from 'models/User';
   providedIn: 'root'
 })
 export class HttpUserService {
-  // private REST_API_SERVER = 'http://localhost:3000';
-  private REST_API_SERVER = 'https://localhost:7075/api';
+  private REST_API_SERVER = 'https://96lxj2-8080.csb.app/';
+  // private REST_API_SERVER = 'https://localhost:7075/api';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -19,7 +19,7 @@ export class HttpUserService {
   constructor(private httpClient: HttpClient) { }
 
   public register(user: User): Observable<any> {
-    const url = `${this.REST_API_SERVER}/Users`;
+    const url = `${this.REST_API_SERVER}/users`;
 
     // Step 1: Get current users to find the max id
     return this.httpClient.get<User[]>(url).pipe(
@@ -46,7 +46,7 @@ export class HttpUserService {
   }
 
   getUsers(): Observable<User[]> {
-    return this.httpClient.get<User[]>('https://localhost:7075/api/Users');
+    return this.httpClient.get<User[]>('https://96lxj2-8080.csb.app/users');
   }
 
   login(username: string, password: string): Observable<any> {
