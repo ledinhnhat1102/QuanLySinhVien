@@ -1,55 +1,40 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Giới Thiệu Hệ Thống Quản Lý Sinh Viên</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="logo">
+<div class="home-container">
+    <div class="banner">
       <h1>Hệ Thống Quản Lý Sinh Viên</h1>
+      <p>Giải pháp toàn diện để quản lý và theo dõi thông tin sinh viên hiệu quả.</p>
     </div>
-  </header>
-
-  <main class="main-content">
-    <section class="intro">
-      <h2>Giới Thiệu Về Hệ Thống</h2>
+    
+    <div class="introduction">
+      <h2>Giới thiệu</h2>
       <p>
-        Hệ thống quản lý sinh viên là một giải pháp toàn diện giúp bạn dễ dàng theo dõi,
-        quản lý và cập nhật thông tin sinh viên trong thời gian thực. Được thiết kế
-        với giao diện thân thiện, hệ thống hỗ trợ tối đa trong việc nâng cao hiệu quả quản lý.
+        Hệ thống Quản lý Sinh viên được thiết kế để hỗ trợ các trường học, tổ chức giáo dục và quản trị viên 
+        trong việc quản lý thông tin sinh viên một cách nhanh chóng, chính xác và tiện lợi. Với giao diện trực quan, 
+        bạn có thể dễ dàng thực hiện các thao tác từ việc nhập thông tin, chỉnh sửa, đến việc xem báo cáo thống kê chi tiết.
       </p>
-    </section>
-
-    <section class="features">
-      <h2>Đặc Điểm Nổi Bật</h2>
-      <div class="feature">
-        <h3>Giao Diện Hiện Đại</h3>
-        <p>Giao diện được thiết kế đơn giản, trực quan, dễ dàng sử dụng cho mọi người.</p>
+    </div>
+    
+    <div class="features">
+      <h2>Đặc điểm nổi bật</h2>
+      <div class="feature-item">
+        <i class="icon fas fa-users"></i>
+        <h3>Quản lý sinh viên toàn diện</h3>
+        <p>Lưu trữ thông tin sinh viên chi tiết, từ học tập, điểm số đến các hoạt động ngoại khóa.</p>
       </div>
-      <div class="feature">
-        <h3>Quản Lý Hiệu Quả</h3>
-        <p>Giúp bạn lưu trữ và quản lý thông tin sinh viên một cách chính xác và nhanh chóng.</p>
+      <div class="feature-item">
+        <i class="icon fas fa-chart-bar"></i>
+        <h3>Báo cáo thống kê chi tiết</h3>
+        <p>Hệ thống cung cấp các báo cáo trực quan giúp bạn đưa ra quyết định nhanh chóng và chính xác.</p>
       </div>
-      <div class="feature">
-        <h3>Báo Cáo Thống Kê</h3>
-        <p>Cung cấp các báo cáo chi tiết để hỗ trợ việc đánh giá và phân tích.</p>
+      <div class="feature-item">
+        <i class="icon fas fa-cogs"></i>
+        <h3>Dễ dàng tùy chỉnh</h3>
+        <p>Cho phép tùy chỉnh theo yêu cầu riêng của tổ chức để đáp ứng mọi nhu cầu quản lý.</p>
       </div>
-    </section>
-
-    <section class="vision">
-      <h2>Tầm Nhìn</h2>
-      <p>
-        Với mục tiêu hướng đến tương lai, hệ thống quản lý sinh viên cam kết không ngừng
-        cải thiện và phát triển để đáp ứng tốt nhất nhu cầu của người dùng.
-      </p>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2024 Hệ Thống Quản Lý Sinh Viên. Mọi quyền được bảo lưu.</p>
-  </footer>
-</body>
-</html>
+    </div>
+    
+    <div class="cta">
+      <p>Bắt đầu hành trình quản lý thông minh ngay hôm nay!</p>
+      <a [routerLink]="['/login']" class="cta-button">Đăng nhập ngay</a>
+    </div>
+  </div>
+  
