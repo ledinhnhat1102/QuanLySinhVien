@@ -18,24 +18,24 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if (!this.user.name.trim()) {
-      alert('Please enter your name.');
+      alert('Vui lòng nhập họ tên.');
       return;
     }
     if (!this.user.username.trim()) {
-      alert('Please enter a username.');
+      alert('Vui lòng nhập tên tài khoản.');
       return;
     }
     if (!this.user.password.trim()) {
-      alert('Please enter a password.');
+      alert('Vui lòng nhập mật khẩu.');
       return;
     }
 
     // Call HttpUserService to register the user
     this.httpUserService.register(this.user).subscribe(
       () => {
-        console.log('User registered successfully');
-        alert('Registration successful!');   
-        this.router.navigate(['/login']); // Redirect to login page after successful registration
+        console.log('Đăng ký tài khoản thành công');
+        alert('Đăng ký tài khoản thành công!');   
+        this.router.navigate(['/login']); 
       },
       error => {
         console.error('Error registering user:', error);

@@ -23,13 +23,13 @@ export class LoginComponent implements OnInit {
       (resp) => { 
         this.message = resp.msg; 
         if (resp.success) {
-          console.log('Successfully logged in'); 
+          console.log('Đăng nhập thành công!'); 
           this.router.navigate(['stocks', 'list']);
-          alert('Successfully logged in!');
+          alert('Đăng nhập thành công!');
           this.router.navigate(['students']);
         } else {
-          console.log('Invalid username or password.'); 
-          alert('Successfully failure !');
+          console.log('Tài khoản hoặc mật khẩu không chính xác!'); 
+          alert('Tài khoản hoặc mật khẩu không chính xác!');
         }
       },
       (err) => { 
